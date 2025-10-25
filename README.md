@@ -24,7 +24,7 @@ An example of the dashboard with "Yearly Statistics" selected:
 
 ---
 
-## Technologies Used
+## Key Libraries & Tools
 
 * **Python**: The main programming language.
 * **Dash**: Used to build the web application's layout and handle interactivity (callbacks).
@@ -57,6 +57,24 @@ The dataset used in this project was artificially created by IBM for the purpose
 * **Year**: Year of the observation extracted from Date.
 
 ---
+
+## Key Skills & Concepts Learned
+
+Building this project provided practical experience in several key areas of data visualization and web application development:
+
+* **Dash Application Structure:** How to build a complete Dash application from scratch, including setting up the `app.layout`.
+* **Layout and Styling:** Using Dash HTML components (`html.Div`, `html.H1`) and Core Components (`dcc.Dropdown`, `dcc.Graph`) to design the user interface. Basic CSS-in-Python was used via the `style` attribute (e.g., `display: 'flex'`, `flex-direction: 'column'`, `align-items: 'center'`).
+* **Callback Functions (Interactivity):**
+    * Defining the core interactivity using `@app.callback` to connect user inputs (`Input`) to application outputs (`Output`).
+    * Implementing conditional logic (`if/elif/else`) within a callback to dynamically render different sets of graphs based on user selections.
+    * Using multiple inputs (`[Input(...), Input(...)]`) to create complex, dependent filters.
+* **Chained Callbacks:** A key concept where one callback's `Output` updates the *property* of another component (updating the `disabled` state of the year dropdown based on the report type selection).
+* **Data Manipulation with Pandas:**
+    * Filtering dataframes on the fly based on callback inputs (e.g., `data[data['Recession'] == 1]`).
+    * Performing data aggregation using `groupby()`, `.mean()`, and `.sum()` to prepare data for plotting.
+* **Data Visualization with Plotly Express:** Generating a variety of charts (`px.line`, `px.bar`, `px.pie`) and customizing them with titles and labels.
+* **Dynamic Content Rendering:** Returning complex layouts (like the 2x2 grid of graphs using nested `html.Div` components) from a single callback function.
+
 ## Running the Project Locally
 
 To run this project on your own machine, follow these steps.
