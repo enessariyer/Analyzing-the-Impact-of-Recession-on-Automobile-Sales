@@ -1,68 +1,90 @@
-# 📊 Otomobil Satış İstatistikleri Dashboard'u
+# Automobile Sales Statistics Dashboard
 
-Bu proje, Python, Plotly ve Dash kullanılarak oluşturulmuş interaktif bir web dashboard'udur. Kullanıcıların, durgunluk dönemlerine (recession) ve yıllara göre geçmiş otomobil satış verilerini analiz etmelerini sağlar.
+This project is an interactive web dashboard created using Python, Plotly, and Dash. It allows users to analyze historical automobile sales data based on recession periods and by year.
 
-Bu uygulama, **IBM Data Visualization with Python** (IBM Data Science Professional Certificate programının bir parçası) kursunda becerilerimi geliştirmek amacıyla tamamladığım bir lab projesidir.
-
----
-
-## 🚀 Proje Görünümü
-
-Dashboard'un "Yearly Statistics" (Yıllık İstatistikler) seçiliyken nasıl göründüğüne dair bir örnek:
-
+This application is a lab project completed to develop my skills during the **IBM Data Visualization with Python** course (part of the IBM Data Science Professional Certificate program).
 
 ---
 
-## ✨ Temel Özellikler
+## Project Preview
 
-* **İnteraktif Kontroller:** Rapor türünü ("Yearly Statistics" veya "Recession Period Statistics") seçmek için bir açılır menü.
-* **Dinamik Filtreleme:** Yıla göre filtreleme yapmak için ikinci bir açılır menü. Bu menü, sadece "Yearly Statistics" raporu seçildiğinde aktif hale gelir.
-* **Dörtlü Grafik Düzeni:** Seçilen filtrelere göre 4 farklı analizi (çizgi, çubuk ve pasta grafikler) aynı anda gösteren 2x2'lik bir ızgara düzeni.
-* **Durgunluk Analizi:** Durgunluk dönemlerindeki satış trendlerini, araç tipi başına düşen ortalama satışları ve reklam harcamalarının payını gösterir.
-* **Yıllık Analiz:** Hem tüm zamanlardaki yıllık/aylık trendleri hem de seçilen spesifik bir yıla ait araç tipi ve reklam harcaması dökümünü gösterir.
+An example of the dashboard with "Yearly Statistics" selected:
+
+![Dashboard Demo](YearlyReportGraphs.png)
 
 ---
 
-## 🛠️ Kullanılan Teknolojiler
+## Key Features
 
-* **Python**: Ana programlama dili.
-* **Dash**: Web uygulamasının iskeletini oluşturmak ve interaktiviteyi (callback'ler) sağlamak için kullanıldı.
-* **Plotly Express**: İnteraktif ve estetik veri görselleştirmeleri (grafikler) oluşturmak için kullanıldı.
-* **Pandas**: Veriyi yüklemek, işlemek ve analiz için gruplamak amacıyla kullanıldı.
-* **Requests**: Veri setini web'den çekmek için kullanıldı.
-
----
-
-## 📦 Veri Seti
-
-Bu projede kullanılan veri seti, IBM tarafından bu kursun amaçları için yapay olarak oluşturulmuştur. Gerçek verileri temsil etmemektedir.
-
-* **Veri Kaynağı:** `https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/historical_automobile_sales.csv`
-
-### Veri Sözlüğü (Değişkenler)
-
-* **Date**: Gözlem tarihi.
-* **Recession**: Durgunluk dönemini belirten ikili değişken (1 = Durgunluk, 0 = Normal).
-* **Automobile_Sales**: Dönem içinde satılan araç sayısı.
-* **GDP**: Kişi başına düşen GSYİH değeri (USD).
-* **Unemployment_Rate**: Aylık işsizlik oranı.
-* **Consumer_Confidence**: Tüketici güvenini temsil eden sentetik bir endeks.
-* **Seasonality_Weight**: Dönem boyunca otomobil satışları üzerindeki mevsimsellik etkisini temsil eden ağırlık.
-* **Price**: Dönem içindeki ortalama araç fiyatı.
-* **Advertising_Expenditure**: Şirketin reklam harcamaları.
-* **Vehicle_Type**: Satılan araç türü (Supperminicar, Smallfamiliycar, Mediumfamilycar, Executivecar, Sports).
-* **Competition**: Pazara giren rakip sayısı veya büyük üreticilerin pazar payı.
-* **Month**: `Date`'ten çıkarılan ay bilgisi.
-* **Year**: `Date`'ten çıkarılan yıl bilgisi.
+* **Interactive Controls:** A dropdown menu to select the report type ("Yearly Statistics" or "Recession Period Statistics").
+* **Dynamic Filtering:** A second dropdown menu to filter by year, which is enabled only when "Yearly Statistics" is selected.
+* **Quad-Graph Layout:** A 2x2 grid layout displaying four different analyses (line, bar, and pie charts) simultaneously based on the selected filters.
+* **Recession Analysis:** Shows sales trends during recession periods, average sales per vehicle type, and the share of advertising expenditure.
+* **Yearly Analysis:** Displays both all-time yearly/monthly trends and a breakdown of vehicle types and advertising expenditure for a specific selected year.
 
 ---
 
-## 🏃‍♀️ Projeyi Bilgisayarında Çalıştırma
+## Technologies Used
 
-Bu projeyi kendi bilgisayarında denemek istersen aşağıdaki adımları izleyebilirsin.
+* **Python**: The main programming language.
+* **Dash**: Used to build the web application's layout and handle interactivity (callbacks).
+* **Plotly Express**: Used to create interactive and aesthetic data visualizations (graphs).
+* **Pandas**: Used for loading, processing, and grouping data for analysis.
+* **Requests**: Used to fetch the dataset from the web.
 
-**1. Proje Dosyalarını İndir:**
-Bu GitHub sayfasındayken, yeşil renkli `<> Code` butonuna tıkla ve ardından `Download ZIP` seçeneğine bas. Bu, tüm proje dosyalarını bir ZIP dosyası olarak bilgisayarına indirecektir. İndirdikten sonra ZIP dosyasını bir klasöre çıkar.
+---
 
-**2. Gerekli Kütüphaneleri Yükle:**
-Projeyi indirdiğin klasörün içine `requirements.txt` adında bir metin dosyası oluştur ve içine aşağıdakileri yapıştır:
+## Dataset
+
+The dataset used in this project was artificially created by IBM for the purposes of this course. It does not represent real data.
+
+* **Data Source:** `https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/historical_automobile_sales.csv`
+
+### Data Dictionary (Variables)
+
+* **Date**: The date of the observation.
+* **Recession**: A binary variable indicating recession period (1 = Recession, 0 = Normal).
+* **Automobile_Sales**: The number of vehicles sold during the period.
+* **GDP**: The per capita GDP value in USD.
+* **Unemployment_Rate**: The monthly unemployment rate.
+* **Consumer_Confidence**: A synthetic index representing consumer confidence.
+* **Seasonality_Weight**: The weight representing the seasonality effect on automobile sales.
+* **Price**: The average vehicle price during the period.
+* **Advertising_Expenditure**: The advertising expenditure of the company.
+* **Vehicle_Type**: The type of vehicles sold (Supperminicar, Smallfamiliycar, Mediumfamilycar, Executivecar, Sports).
+* **Competition**: The measure of competition in the market.
+* **Month**: Month of the observation extracted from Date.
+* **Year**: Year of the observation extracted from Date.
+
+---
+## Running the Project Locally
+
+To run this project on your own machine, follow these steps.
+
+**1. Get the Code**
+Clone this repository or download the files as a ZIP.
+```bash
+git clone https://github.com/enessariyer/Analyzing-the-Impact-of-Recession-on-Automobile-Sales.git
+cd Analyzing-the-Impact-of-Recession-on-Automobile-Sales
+````
+
+**2. Install Dependencies**
+This project requires the libraries listed in `requirements.txt`. To install them, run:
+
+```bash
+pip install -r requirements.txt
+```
+
+**3. Run the Application**
+Execute the main Python script (assuming your file is named `app.py`):
+
+```bash
+python app.py
+```
+
+**4. View in Browser**
+Open your web browser and navigate to the following address:
+
+```
+http://127.0.0.1:8050/
+```
