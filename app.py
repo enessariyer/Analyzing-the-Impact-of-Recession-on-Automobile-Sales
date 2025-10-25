@@ -235,5 +235,4 @@ def update_ouput_container(selected_statistics, input_year):
 
 # --- Run the Application ---
 if __name__ == "__main__":
-    # IMPORTANT: Set debug=False when deploying to production
     app.run()
